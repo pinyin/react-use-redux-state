@@ -1,6 +1,6 @@
 {
     "name": "react-use-redux-state",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Use a Redux store.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -20,7 +20,8 @@
     "keywords": [
         "redux",
         "react",
-        "react-hooks"
+        "react-hooks",
+        "react-redux"
     ],
     "author": "Bo Bao <bob432091@gmail.com> (https://github.com/pinyin)",
     "license": "MIT",
