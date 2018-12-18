@@ -35,7 +35,11 @@ function proxyDispatch<A extends Action>(
 }
 
 type Dispatchers<A extends Action> = {
-    [type in A['type']]: <Action extends WithoutType<A>>(a: Action) => Action
+    [type in A['type']]: <Action extends WithoutType<Typed<A, type>>>(
+        a: Action,
+    ) => Action
 }
+
+type Typed<A extends Action, T> = A extends { type: T } ? A : never
 
 type WithoutType<A extends Action> = { [K in Exclude<keyof A, 'type'>]: A[K] }

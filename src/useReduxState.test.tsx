@@ -5,11 +5,16 @@ import { createStore } from 'redux'
 
 describe(`${useReduxState.name}`, () => {
     const store = createStore(
-        (state: number | undefined, action: { type: 'inc'; value: number }) => {
+        (
+            state: number | undefined,
+            action: { type: 'inc'; value: number } | { type: 'dec'; v: number },
+        ) => {
             const prevState = state || 0
             switch (action.type) {
                 case 'inc':
                     return prevState + action.value
+                case 'dec':
+                    return prevState - action.v
                 default:
                     return prevState
             }
@@ -22,6 +27,7 @@ describe(`${useReduxState.name}`, () => {
             <p
                 onClick={() => dispatch({ type: 'inc', value: 1 })}
                 onFocus={() => dispatch.inc({ value: 2 })}
+                onMouseMove={() => dispatch.dec({ v: 2 })}
             >
                 {state}
             </p>
@@ -45,6 +51,8 @@ describe(`${useReduxState.name}`, () => {
         await new Promise(resolve => setTimeout(resolve, 100))
         renderer.root.findAllByType('p')[0].props['onFocus']()
         expect(renderer.root.findAllByType('p')[0].children[0]).toEqual('3')
+        renderer.root.findAllByType('p')[0].props['onMouseMove']()
+        expect(renderer.root.findAllByType('p')[0].children[0]).toEqual('1')
     })
 
     // todo: test unsubscribe & resubscribe

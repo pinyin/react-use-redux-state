@@ -1,6 +1,6 @@
 {
     "name": "react-use-redux-state",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Use a Redux store.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
