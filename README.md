@@ -1,5 +1,7 @@
 # react-use-redux-state
 
+[![Build Status](https://travis-ci.com/pinyin/react-use-redux-state.svg?branch=master)](https://travis-ci.com/pinyin/react-use-redux-state)
+
 Use a Redux store.
 
 ## Install
@@ -50,6 +52,13 @@ const ReduxComponent = () => {
 To make an in-component Redux store, use this hook along with `useRef` or `useMemo`.
 
 Notice you may pass action type as method name in environments with `Proxy` support.
+
+## Other Solutions
+
+-   [`redux-react-hook`](https://github.com/facebookincubator/redux-react-hook)
+-   [`use-substate`](https://github.com/philipp-spiess/use-substate)
+-   [`react-use-redux`](https://github.com/martynaskadisa/react-use-redux)
+-   [`react-use-dux`](https://github.com/richardpj/react-use-dux)
 
 ## License
 
