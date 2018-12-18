@@ -26,9 +26,12 @@ function proxyDispatch<A extends Action>(
                   return target(argArray[0])
               },
               get(target: Dispatch<A>, p: PropertyKey, receiver: any): any {
-                  return (a: WithoutType<A>) => {
-                      return target(Object.assign({ type: p }, a) as A)
+                  if (!(target as any)[p]) {
+                      ;(target as any)[p] = (a: WithoutType<A>) => {
+                          return target(Object.assign({ type: p }, a) as A)
+                      }
                   }
+                  return (target as any)[p]
               },
           }) as any)
         : (dispatch as any)
