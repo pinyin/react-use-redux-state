@@ -1,6 +1,6 @@
 {
     "name": "react-use-redux-state",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Use a Redux store.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -18,7 +18,7 @@
         "url": "git+https://github.com/pinyin/react-use-redux-state.git"
     },
     "keywords": [
-        "rxjs",
+        "redux",
         "react",
         "react-hooks"
     ],

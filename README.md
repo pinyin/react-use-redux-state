@@ -10,7 +10,7 @@ npm install --save redux-use-redux-state
 
 ## Usage
 
-The hook work in a way like `useState`, but for Redux.
+The hook works in a way like `useState`, but for Redux.
 
 ```js
 const store = createStore(
