@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "es5",
+    "module": "commonjs",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "inlineSourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "strict": true,
+    "declarationDir": "dist",
+    "importHelpers": true,
+    "noEmitHelpers": true,
+    "lib": [
+      "es6"
+    ]
+  },
+  "include": [
+    "index.ts"
+  ]
+}

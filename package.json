@@ -1,0 +1,50 @@
+{
+    "name": "react-use-redux-state",
+    "version": "0.0.1",
+    "description": "Use a Redux store.",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "sideEffects": false,
+    "scripts": {
+        "prepublishOnly": "rm -rf dist && npx tsc",
+        "test": "npx tsc && npx jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pinyin/react-use-redux-state.git"
+    },
+    "keywords": [
+        "rxjs",
+        "react",
+        "react-hooks"
+    ],
+    "author": "Bo Bao <bob432091@gmail.com> (https://github.com/pinyin)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/pinyin/react-use-redux-state/issues"
+    },
+    "homepage": "https://github.com/pinyin/react-use-redux-state#readme",
+    "devDependencies": {
+        "@types/jest": "^23.3.10",
+        "@types/react": "^16.7.17",
+        "@types/react-test-renderer": "^16.0.3",
+        "jest": "^23.6.0",
+        "react": "^16.7.0-alpha.2",
+        "react-dom": "^16.7.0-alpha.2",
+        "react-test-renderer": "^16.7.0-alpha.2",
+        "redux": "^4.0.1",
+        "ts-jest": "^23.10.5",
+        "typescript": "^3.2.2"
+    },
+    "peerDependencies": {
+        "@types/react": "^16.7.17",
+        "react": "^16.7.0-alpha.2"
+    },
+    "dependencies": {
+        "tslib": "^1.9.3"
+    }
+}
