@@ -27,8 +27,10 @@ function proxyDispatch<A extends Action>(
               },
               get(target: Dispatch<A>, p: PropertyKey, receiver: any): any {
                   if (!(target as any)[p]) {
-                      ;(target as any)[p] = (a: WithoutType<A>) => {
-                          return target(Object.assign({ type: p }, a) as A)
+                      ;(target as any)[p] = (a: any) => {
+                          return target(Object.assign({}, a || {}, {
+                              type: p,
+                          }) as A)
                       }
                   }
                   return (target as any)[p]
@@ -38,9 +40,9 @@ function proxyDispatch<A extends Action>(
 }
 
 type Dispatchers<A extends Action> = {
-    [type in A['type']]: <Action extends WithoutType<Typed<A, type>>>(
-        a: Action,
-    ) => Action
+    [type in A['type']]: { type: type } extends Typed<A, type>
+        ? () => { type: type }
+        : <Action extends WithoutType<Typed<A, type>>>(a: Action) => Action
 }
 
 type Typed<A extends Action, T> = A extends { type: T } ? A : never
