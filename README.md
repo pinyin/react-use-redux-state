@@ -55,7 +55,7 @@ Notice you may pass action type as method name in environments with `Proxy` supp
 
 ## Limits
 
-Due to the flexibility of hooks, some logic like extracting component state from redux state is designed to be left to you.
+Due to the flexibility of hooks, some logic like extracting component state from Redux state is designed to be left to you.
 
 You may want to write code like:
 
@@ -71,7 +71,7 @@ const Component = props => {
 
 ```
 
-Where `StoreContext` is your context, created by something like `React.createStore(store)`.
+Where `StoreContext` is your context, created by something like `React.createContext(store)`. Or you can just import a global store instance like the example above.
 
 ## Other Solutions
 
