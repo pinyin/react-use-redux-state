@@ -51,7 +51,27 @@ const ReduxComponent = () => {
 
 To make an in-component Redux store, use this hook along with `useRef` or `useMemo`.
 
-Notice you may pass action type as method name in environments with `Proxy` support.
+Notice you may pass action type as method name in environments with `Proxy` support. TypeScript support is also included.
+
+## Limits
+
+Due to the flexibility of hooks, some logic like extracting component state from redux state is designed to be left to you.
+
+You may want to write code like:
+
+```js
+
+const Component = props => {
+    const store = useContext(StoreContext)
+    const [appState, dispatch] = useReduxStore(store)
+    const state = useMemo(()=> {/* compute & return component state from redux state */, [appState, props])}
+
+    return /* use the variable `state` here */
+}
+
+```
+
+Where `StoreContext` is your context, created by something like `React.createStore(store)`.
 
 ## Other Solutions
 
